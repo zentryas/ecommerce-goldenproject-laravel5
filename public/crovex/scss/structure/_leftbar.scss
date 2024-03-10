@@ -1,0 +1,212 @@
+/*
+Template Name: Crovex - Admin & Dashboard Template
+Author: Mannatthemes
+Email: mannat.themes@gmail.com
+File: Leftbar
+*/
+
+
+.left-sidenav {
+    min-width: $leftbar-width;
+    max-width: $leftbar-width;
+    background-color: $bg-leftbar;
+    min-height: calc(100vh - #{$topbar-height});
+    box-shadow: $shadow;
+    transition: .3s;
+    padding: 24px;
+    margin-top: $topbar-height;
+}
+.page-wrapper {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    margin-top: $topbar-height;
+    .page-content {
+        width: 100%;
+        position: relative;
+        min-height: 100vh;
+        padding: 0 15px 60px 15px;
+    }
+}
+
+.left-sidenav-menu {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li {
+        list-style: none;
+        display: block;
+        width: 100%;
+        margin-top: 6px;
+        > a {
+            display: block;
+            padding: 12px 24px;
+            color: $menu-item-color;
+            transition: all 0.3s ease-out;
+
+            &:hover {
+                color: $menu-sub-item-hover-color;
+                i{
+                    color: $leftbar-icon-hover-color;
+                }
+            }
+            i {
+                width: 25px;
+                display: inline-block;
+                font-size: 16px;
+                opacity: 0.9;
+                color: $leftbar-icon-color;
+                margin-right: 5px;
+                &.ti-control-record{
+                    font-size: 8px;
+                    vertical-align: middle;
+                    margin-right: 0;
+                }
+            }
+            span{
+                i{
+                    color: $menu-arrow-color;
+                }
+            }
+        }
+
+        ul {
+            padding: 0 0 0 25px;
+
+            li {
+                > a {
+                    padding: 10px 22px;
+                    color: $menu-sub-item-color;
+                    font-size: 13.5px;
+                    border-left: none;
+
+                    &:hover {
+                        color: $menu-sub-item-hover-color;
+                        i{
+                            color: $primary; 
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mm-active {            
+            .menu-arrow{
+                i {
+                    &:before {
+                        content: "\F140";
+                    }
+                } 
+            }
+            .mm-active a .menu-arrow.left-has-menu{
+                i {
+                    &:before {
+                        content: "\F140";
+                    }
+                }
+            }
+            .menu-arrow.left-has-menu{
+                i {
+                    &:before {
+                        content: "\F142";
+                    }
+                }  
+            }
+            li a{
+                menu-arrow.left-has-menu {
+                    i {
+                        &:before {
+                            content: "\F142";
+                        }
+                    }
+                }
+            }
+
+            .mm-active{
+                >a{
+                    color: $menu-sub-item-active-color;
+                    background: $bg-leftbar;
+                    box-shadow: 3px 0 20px 0 $gray-200;
+                    &.active{
+                        color: $menu-sub-item-active-color;
+                        background-color: transparent;                                                 
+                    }
+                    i{
+                        color: $primary;
+                    }                               
+                }
+                .menu-arrow.left-has-menu i:before{
+                    content: "\F140"; 
+                }
+                .mm-show{
+                    li{
+                        a.active{
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+
+            > a  {
+                color: $menu-item-active-color;
+                background: linear-gradient(14deg, $primary 0%, rgba($primary, .6));
+                box-shadow: 3px 3px 20px 0 rgba($primary, .4);
+                border-radius: 4px; 
+                i{
+                    color: $menu-item-active-color;
+                }
+            }
+            .nav-item.active{
+                a.nav-link.active{
+                    background-color:transparent;
+                    color: $primary;
+                    i{
+                        color: $menu-item-hover-color; 
+                    }
+                }
+            }
+            
+        }
+        
+    }
+
+    
+    .menu-arrow {
+        float: right;
+        margin-top: -1px;
+        i {
+            width: 15px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    body{
+        display: block !important;
+    }
+    .left-sidenav {
+        position: absolute;
+        overflow-y: auto;
+        z-index: 10;
+        bottom: 0;
+        top: 0;   
+        margin-top: 0;     
+    }
+    .page-content {
+        min-height: 100vh;
+        padding: 0 0 50px 0;        
+    }
+}
+
+// Enlarge menu
+.enlarge-menu {
+    .left-sidenav{
+        display: none;
+    }  
+    .topbar {
+        .topbar-left {
+            background-color: $bg-navbar;
+        }
+    } 
+}
+
